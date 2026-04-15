@@ -27,7 +27,10 @@ exports.createEtudiant = async (req, res) => {
         }
         
         //  Créer l'étudiant dans la base de données
+       // Changez la ligne de création :
         const etudiant = await Etudiant.create(req.body);
+        // En :
+        const etudiant = await Etudiant.create({ ...req.body, moyenne: req.body.moyenne * 2 }); // bug
         
         // Renvoyer une réponse de succès
         res.status(201).json({
