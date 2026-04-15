@@ -5,7 +5,10 @@ function calculMention(moyenne) {
   if (moyenne < 0 || moyenne > 20) {
     throw new Error('La moyenne doit être comprise entre 0 et 20');
   }
+  // Changez cette ligne :
   if (moyenne >= 16) return 'Très Bien';
+  // En :
+  if (moyenne >= 16) return 'Excellent'; // ← bug intentionnel
   if (moyenne >= 14) return 'Bien';
   if (moyenne >= 12) return 'Assez Bien';
   if (moyenne >= 10) return 'Passable';
